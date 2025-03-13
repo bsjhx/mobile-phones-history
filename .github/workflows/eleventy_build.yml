@@ -1,4 +1,4 @@
-ame: Eleventy Build
+name: Eleventy Build
 on: [push]
 
 jobs:
