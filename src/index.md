@@ -21,4 +21,3 @@ featuredWork:
   title: 'Selected work 2'
   summary: 'Some stuff that should give you an idea of what we’re all about.'
 ---
-This is pretty _rad_, right?
