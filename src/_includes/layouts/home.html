@@ -1,8 +1,57 @@
 {% extends "layouts/base.html" %}
 {% block content %}
 
-{% for item in collections.phone %}
-<h3>{{ item.data.id }} - {{ item.data.name }}</h3>
-{% endfor %}
+<div class="grid medium-space" style="margin: 20px 20px 0 20px">
+  {% for item in collections.phone %}
+  <div class="s3">
+    <article class="border fill">
+      <img class="responsive small" src="../../images/bg/{{ item.data.image }}" onclick="showModal(this)">
+      <dialog id="imageModal" onclick="closeModal()">
+        <article>
+          <img id="fullImage" class="modal-image" src="../../images/bg/{{ item.data.image }}" alt="Full Image">
+        </article>
+      </dialog>
+      <h5>{{ item.data.id }} - {{ item.data.producer }} {{ item.data.model }}</h5>
+      <!--        <nav>-->
+      <!--          <button>Button</button>-->
+      <!--        </nav>-->
+    </article>
+  </div>
+  {% endfor %}
+</div>
+
+<script>
+    function showModal(imgElement) {
+        console.log('dadasdas')
+        const modal = document.getElementById("imageModal");
+        const fullImage = document.getElementById("fullImage");
+
+        // Set the clicked image's source in the modal
+        fullImage.src = imgElement.src;
+
+        // Show the modal
+        modal.showModal();
+    }
+
+    function closeModal() {
+        console.log('close')
+        document.getElementById("imageModal").close();
+    }
+</script>
+
+<style>
+    #imageModal {
+        max-width: 90vw; /* Prevents modal from being too wide */
+        max-height: 90vh; /* Limits modal height */
+    }
+
+    .modal-image {
+        max-width: 100%; /* Ensures it doesn't overflow width */
+        max-height: 80vh; /* Makes image fit within 80% of viewport height */
+        display: block; /* Removes extra spacing */
+        margin: auto; /* Centers image */
+    }
+</style>
 
 {% endblock %}
+
