@@ -21,7 +21,7 @@ module.exports = (config) => {
     });
 
     const isProd = process.env.NODE_ENV === 'production';
-    const baseurl = isProd ? './prod' : '../../images';
+    const baseurl = isProd ? './images' : '../../images';
     config.addGlobalData("baseurl", baseurl);
 
     return {
