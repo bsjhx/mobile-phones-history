@@ -5,10 +5,10 @@
   {% for item in collections.phone %}
   <div class="s3">
     <article class="border fill">
-      <img class="responsive small" src="../../images/bg/{{ item.data.image }}" onclick="showModal(this)">
+      <img class="responsive small" src="{{ baseurl }}/bg/{{ item.data.image }}" onclick="showModal(this)">
       <dialog id="imageModal" onclick="closeModal()">
         <article>
-          <img id="fullImage" class="modal-image" src="{{ baseurl }}/{{ item.data.image }}" alt="Full Image">
+          <img id="fullImage" class="modal-image" src="{{ baseurl }}/bg/{{ item.data.image }}" alt="Full">
         </article>
       </dialog>
       <h5>{{ item.data.id }} - {{ item.data.producer }} {{ item.data.model }}</h5>

@@ -15,6 +15,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Create .env file
+        run: echo "NODE_ENV=production" >> .env
+
       - name: Build
         run: npx @11ty/eleventy
 

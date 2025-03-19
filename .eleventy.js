@@ -1,4 +1,5 @@
 const sortByDisplayOrder = require('./src/utils/sort-by-display-order.js');
+require('dotenv').config();
 
 module.exports = (config) => {
     config.addPassthroughCopy('./src/images/');
@@ -19,7 +20,9 @@ module.exports = (config) => {
         return collection.getFilteredByGlob('./src/phone/*.md');
     });
 
-    config.addGlobalData("baseurl", process.env.BASEURL || "");
+    const isProd = process.env.NODE_ENV === 'production';
+    const baseurl = isProd ? './prod' : '../../images';
+    config.addGlobalData("baseurl", baseurl);
 
     return {
         markdownTemplateEngine: 'njk',
