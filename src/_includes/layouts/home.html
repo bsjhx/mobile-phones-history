@@ -8,7 +8,7 @@
       <img class="responsive small" src="../../images/bg/{{ item.data.image }}" onclick="showModal(this)">
       <dialog id="imageModal" onclick="closeModal()">
         <article>
-          <img id="fullImage" class="modal-image" src="../../images/bg/{{ item.data.image }}" alt="Full Image">
+          <img id="fullImage" class="modal-image" src="{{ baseurl }}/{{ item.data.image }}" alt="Full Image">
         </article>
       </dialog>
       <h5>{{ item.data.id }} - {{ item.data.producer }} {{ item.data.model }}</h5>

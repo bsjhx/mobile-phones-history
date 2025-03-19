@@ -19,6 +19,8 @@ module.exports = (config) => {
         return collection.getFilteredByGlob('./src/phone/*.md');
     });
 
+    config.addGlobalData("baseurl", process.env.BASEURL || "");
+
     return {
         markdownTemplateEngine: 'njk',
         dataTemplateEngine: 'njk',
