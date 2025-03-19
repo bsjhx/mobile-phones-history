@@ -4,14 +4,23 @@
 <div class="grid medium-space" style="margin: 20px 20px 0 20px">
   {% for item in collections.phone %}
   <div class="s3">
-    <article class="border fill">
+    <article class="fill ">
       <img class="responsive small" src="{{ baseurl }}/bg/{{ item.data.image }}" onclick="showModal(this)">
       <dialog id="imageModal" onclick="closeModal()">
         <article>
           <img id="fullImage" class="modal-image" src="{{ baseurl }}/bg/{{ item.data.image }}" alt="Full">
         </article>
       </dialog>
-      <h5>{{ item.data.id }} - {{ item.data.producer }} {{ item.data.model }}</h5>
+      <h6>
+        {{ item.data.id }} - {{ item.data.producer }} {{ item.data.model }}
+      </h6>
+      <p>
+        {%- if item.data.inUse %}
+        <i class="small">stay_current_portrait</i>
+        <span></span>
+        {%- endif -%}
+        {{ item.data.from }} - {{ item.data.to }}
+      </p>
       <!--        <nav>-->
       <!--          <button>Button</button>-->
       <!--        </nav>-->
